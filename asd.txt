@@ -1,0 +1,108 @@
+<section class="p-5">
+      <!-- check-in form-->
+
+      <form action="/details" method="post">
+        <!-- customer details -->
+
+        <div class="border border-dark border-3 p-3">
+          <h2 class="d-flex justify-content-center h-6">customer details</h2>
+          <br />
+          <input
+            type="name"
+            class="d-flex justify-content-center form-control w-50 mx-auto"
+            id="name"
+            placeholder="Enter name"
+            name="name"
+          />
+          <br />
+          <input
+            type="number"
+            class="d-flex justify-content-center form-control w-50 mx-auto"
+            name="mobile number"
+            placeholder="Enter mobile number"
+            id="mno"
+          />
+        </div>
+        <br />
+        <!-- request checkbox -->
+
+        <div class="d-flex justify-content-around">
+          <h5>Request of the customer :</h5>
+          <div>
+            <input
+              type="checkbox"
+              name="product"
+              id="check-product"
+              class="align-middle"
+            />
+            <label for="check-product"><b>Product</b> </label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="service"
+              id="check-service"
+              class="align-middle"
+            />
+            <label for="check-service" class=""><b>Service</b> </label>
+          </div>
+        </div>
+        <br />
+        <!-- product details -->
+
+        <div class="border border-dark border-3 p-3">
+          <h2 class="d-flex justify-content-center h-6">product details</h2>
+          <br />
+          <input
+            type="name"
+            class="d-flex justify-content-center form-control w-50 mx-auto"
+            id="name"
+            placeholder="Enter name"
+            name="name"
+          />
+          <br />
+          <input
+            type="number"
+            class="d-flex justify-content-center form-control w-50 mx-auto"
+            name="mobile number"
+            placeholder="Enter mobile number"
+            id="mno"
+          />
+        </div>
+        <br />
+        <!-- service details-->
+
+        <div class="border border-dark border-3 p-3">
+          <h2 class="d-flex justify-content-center h-6">service details</h2>
+          <br />
+          <input
+            type="name"
+            class="d-flex justify-content-center form-control w-50 mx-auto"
+            id="name"
+            placeholder="Enter name"
+            name="name"
+          />
+          <br />
+          <input
+            type="number"
+            class="d-flex justify-content-center form-control w-50 mx-auto"
+            name="mobile number"
+            placeholder="Enter mobile number"
+            id="mno"
+          />
+        </div>
+    </form>
+</section >
+    <!--section
+      id="side"
+      class="d-flex flex-column justify-content-center border w-25"
+    >
+      <p class="d-flex border">general</p>
+      <p class="d-flex border mw-25">invoice</p>
+    </section -->
+
+
+for i in a:
+  if i.name=="bcd"
+
+  a
