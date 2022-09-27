@@ -24,7 +24,7 @@ bt_check_details.addEventListener("click", () => {
 });
 
 bt_check_display.addEventListener("click", () => {
-  fetch("/displayTable")
+  fetch("/check_in")
     .then((res) => {
       return res.text();
     })

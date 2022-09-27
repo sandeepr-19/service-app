@@ -9,7 +9,7 @@ let a1 = [];
 let tser_table = "";
 
 show.addEventListener("click", () => {
-  fetch("/service-show")
+  fetch("/service")
     .then((res) => {
       return res.text();
     })
