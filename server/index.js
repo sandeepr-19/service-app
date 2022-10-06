@@ -1,16 +1,20 @@
 const express = require("express");
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 8080;
 const app = express();
+const pug = require("pug");
+const path = require("path");
 
 const service = require("./routes/service.js");
 const sales = require("./routes/sales.js");
 const check_in = require("./routes/check_in.js");
 
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "./views"));
 app.use(express.static("../public"));
 
 /* home request*/
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "../public/index.html");
+  res.render("home.pug");
 });
 
 app.use("/sales", sales);

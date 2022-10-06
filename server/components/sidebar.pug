@@ -1,0 +1,18 @@
+
+-let arr=[{'main':'checkin','sub1':'checkin entry','sub2':'checkin review'},{'main':'service','sub1':'service entry','sub2':'service review'},{'main':'sales','sub1':'sales entry','sub2':'sales review'}]
+nav.navba.navbar-sm.bg-dark.navbar-dark.h-100#sidebar
+    .container-fluid.ms-3#elements
+        p.h1.text-light a&b
+        br
+        br
+        .collapse.navbar-collapse
+        ul.navbar-nav
+            each i in arr
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(role="button" data-bs-toggle="dropdown")=(i.main)
+                    ul.dropdown-menu 
+                        li
+                            a.dropdown-item(herf="#")=i.sub1  
+                        li
+                            a.dropdown-item(herf="#")=i.sub2 
+        a(href="#") about 
