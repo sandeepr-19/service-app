@@ -20,3 +20,11 @@ body.w-100
   include ../components/sidebar.pug
   // header
   .d-flex.py-auto.float-end.h-100#page
+    form#check-form.w-25.mx-auto.was-validated(action='check_in', method='post', target='hid')
+      .mb-3.mt-3
+        input#customer_name.form-control(placeholder='Enter customer name', name='customer_name', required='')
+      |       
+      .mb-3.mt-3
+        input#mobile_no.form-control(placeholder='Enter mobile number', name='mobile_no', required='')
+      |       
+      button#form-submit.btn.btn-primary.mx-auto(type='submit') Submit

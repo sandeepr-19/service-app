@@ -12,7 +12,7 @@ nav.navba.navbar-sm.bg-dark.navbar-dark.h-100#sidebar
                     a.nav-link.dropdown-toggle(role="button" data-bs-toggle="dropdown")=(i.main)
                     ul.dropdown-menu 
                         li
-                            a.dropdown-item(herf="#")=i.sub1  
+                            a.dropdown-item(id=i.sub1.replaceAll(' ', '_'))=i.sub1  
                         li
-                            a.dropdown-item(herf="#")=i.sub2 
+                            a.dropdown-item(id=i.sub2.replaceAll(' ', '_'))=i.sub2 
         a(href="#") about 

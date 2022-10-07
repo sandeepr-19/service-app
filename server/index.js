@@ -17,6 +17,11 @@ app.get("/", (req, res) => {
   res.render("home.pug");
 });
 
+//redirect
+app.get("/checkin_page", (req, res) => {
+  res.render("checkin_entry");
+});
+
 app.use("/sales", sales);
 app.use("/service", service);
 app.use("/check_in", check_in);
