@@ -25,10 +25,11 @@ router.post("/", enc, (req, res) => {
       "opened-date": d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear(),
     };
     const result1 = await dbo.collection("check-in").insertOne(doc1);
-
+    res.send(
+      "successfully stored and the current checkin id is " + result1.insertedId
+    );
     db.close();
   });
-  res.send("successfully stored");
 });
 
 router.get("/", (req, res) => {
@@ -37,6 +38,8 @@ router.get("/", (req, res) => {
     let dbo = db.db("a1");
     let cursor = await dbo.collection("check-in").find({});
     let values = await cursor.toArray();
+    console.log(values);
+    console.log(values.length);
     res.send(JSON.stringify(values));
     db.close();
   });

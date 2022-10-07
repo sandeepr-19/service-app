@@ -14,8 +14,11 @@ router.get("/", (req, res) => {
     let cursor = await dbo.collection("service").find({});
 
     const allValues = await cursor.toArray();
-
-    res.send(JSON.stringify(allValues));
+    console.log(allValues);
+    res.render("service_review.pug", {
+      total: allValues.length,
+      obj: allValues,
+    });
     db.close();
   });
 });

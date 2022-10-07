@@ -18,8 +18,13 @@ app.get("/", (req, res) => {
 });
 
 //redirect
+// checkin entry
 app.get("/checkin_page", (req, res) => {
   res.render("checkin_entry");
+});
+//service entry
+app.get("/service_page", (req, res) => {
+  res.render("service_entry");
 });
 
 app.use("/sales", sales);
