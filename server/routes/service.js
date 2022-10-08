@@ -8,14 +8,14 @@ const db_url =
   "mongodb+srv://sandeep:1oL%40saN%3A)@cluster0.zycffmo.mongodb.net/?retryWrites=true&w=majority";
 
 router.get("/", (req, res) => {
-  MongoClient.connect(db_url, async function (err, db) {
+  console.log("ji");
+  MongoClient.connect(db_url, async (err, db) => {
     if (err) throw err;
     const dbo = db.db("a1");
     let cursor = await dbo.collection("service").find({});
-
     const allValues = await cursor.toArray();
     console.log(allValues);
-    res.render("service_review.pug", {
+    res.render("service_review", {
       total: allValues.length,
       obj: allValues,
     });

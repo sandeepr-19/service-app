@@ -5,7 +5,7 @@ const pug = require("pug");
 const path = require("path");
 
 const service = require("./routes/service.js");
-const sales = require("./routes/sales.js");
+const product = require("./routes/product.js");
 const check_in = require("./routes/check_in.js");
 
 app.set("view engine", "pug");
@@ -18,16 +18,17 @@ app.get("/", (req, res) => {
 });
 
 //redirect
-// checkin entry
-app.get("/checkin_page", (req, res) => {
-  res.render("checkin_entry");
-});
 //service entry
 app.get("/service_page", (req, res) => {
   res.render("service_entry");
 });
 
-app.use("/sales", sales);
+//product stock entry
+app.get("/product_page", (req, res) => {
+  res.render("product_entry");
+});
+
+app.use("/product", product);
 app.use("/service", service);
 app.use("/check_in", check_in);
 

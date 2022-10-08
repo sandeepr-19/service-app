@@ -21,7 +21,7 @@ body.w-100
   // header
   .d-flex.py-auto.float-end.h-100#page
     .mx-auto.my-auto
-        table#table.table.table-hover.w-25.mx-auto.overflow-auto(style='max-height: 200px')
+        table#table.table.table-hover.w-75.mx-auto.overflow-auto(style='max-height: 200px')
             thead
                 tr
                     th Attendee
@@ -30,3 +30,10 @@ body.w-100
                     th accepted date 
                     th finished date
             tbody#ser_table
+                each objt in obj 
+                    tr 
+                        td #{objt['attendee-name']}
+                        td #{objt['complaint']}
+                        td #{objt['product-details']}
+                        td #{objt['accepted-date']}
+                        td #{objt['finished-date']}

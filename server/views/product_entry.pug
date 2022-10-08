@@ -10,29 +10,21 @@ head
     // JavaScript Bundle with Popper
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js', integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa', crossorigin='anonymous')
     |     
-    link(rel='stylesheet', href='checkin.css')
+    link(rel='stylesheet', href='index.css')
     |
     link(rel="stylesheet", href="sidebar.css")
     |     
     title service_app   
- 
+
 body.w-100
   include ../components/sidebar.pug
   // header
   .d-flex.py-auto.float-end.h-100#page
-    form#check-form.w-25.mx-auto.was-validated(action='check_in', method='post', target='hid')
-      .mb-3.mt-3
-        input#customer_name.form-control(placeholder='Enter customer name', name='customer_name', required='')
-      |       
-      .mb-3.mt-3
-        input#mobile_no.form-control(placeholder='Enter mobile number', name='mobile_no', required='')
-      |       
-      .mb-3.mt-3 
-        label.form-label(for="checkin") choose the product:
-        input.form-control#checkin(list="checkins" name="checkin" )
-        datalist#checkins(name="checkins")
-          each val in list
-            option(value=val["product_id"] name="productd") #{val["name"]} #{val["price"]} #{val["stock"]}
-              
-            
-      button#form-submit.btn.btn-primary.mx-auto(type='submit') Submit
+    form#product-form.mx-auto.was-validated(action='product' method='post' target='hid')
+        .mb-3.mt-3
+            input#product_name.form-control(placeholder='Enter product name' name='product_name' required='')
+        .mb-3.mt-3
+            input#price.form-control(placeholder='Enter price' name='price' required='')
+        .mb-3.mt-3
+            input#stock.form-control(placeholder='Enter stock ' name='stocck' required='')
+        button#form-submit.btn.btn-primary.mx-auto(type='submit') Submit
