@@ -10,7 +10,7 @@ const db_url =
 router.post("/", enc, (req, res) => {
   let customer_name = req.body.customer_name;
   let customer_no = req.body.mobile_no;
-  let product_id = req.body.checkin;
+  let product_id = req.body.product;
 
   MongoClient.connect(db_url, async (err, db) => {
     if (err) throw err;
@@ -63,15 +63,8 @@ router.get("/", (req, res) => {
           mobile_no: element["mobile no"],
         });
       });
-      res.send(JSON.stringify(values));
+      res.render("checkin_review", { list: list1 });
     }
-    // values.forEach((element) => {
-    //   list1.push({
-    //     checkin_id: element["_id"],
-    //     name: element["name"],
-    //     mobile_no: element["mobile no"],
-    //   });
-    //});
 
     db.close();
   });

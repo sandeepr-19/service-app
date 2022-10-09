@@ -10,7 +10,7 @@ head
     // JavaScript Bundle with Popper
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js', integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa', crossorigin='anonymous')
     |     
-    link(rel='stylesheet', href='checkin_review.css')
+    link(rel='stylesheet', href='index.css')
     |
     link(rel="stylesheet", href="sidebar.css")
     |     
@@ -21,3 +21,16 @@ body.w-100
   // header
   .d-flex.py-auto.float-end.h-100#page
     .mx-auto.my-auto
+      table#table.table.table-hover.w-75.mx-auto.overflow-auto(style='max-height: 200px')
+        thead
+          tr
+            th chekin id
+            th customer name
+            th mobile no 
+        tbody#ser_table
+          each objt in list
+            tr 
+              td #{objt['checkin_id']}
+              td #{objt['name']}
+              td #{objt['mobile_no']}
+          

@@ -14,13 +14,19 @@ head
     |
     link(rel="stylesheet", href="sidebar.css")
     |     
-    title service_app   
+    title service_app
 
 body.w-100
   include ../components/sidebar.pug
   // header
   .d-flex.py-auto.float-end.h-100#page
     form#service-form.mx-auto.was-validated(action='service' method='post' target='hid')
+        .mb-3.mt-3 
+            label.form-label(for="checkin") choose the checkin id:
+            input.form-control#checkin(list="checkins" name="checkin" )
+            datalist#checkins(name="checkins")
+                each val in checkins 
+                    option(value=val["checkin_id"] name="checkind") #{val["name"]} #{val["mobile_no"]}
         .mb-3.mt-3
             input#attendee_name.form-control(placeholder='Enter Attendee name' name='attendee_name' required='')
         .mb-3.mt-3
@@ -28,7 +34,11 @@ body.w-100
         .mb-3.mt-3
             input#product_det.form-control(placeholder='Enter product details' name='product_det' required='')
         .mb-3.mt-3
-            input#rep_item_id.form-control(placeholder='Enter replaced item id' name='rep_item_id' required='')
+            label.form-label(for="product") choose the replaced product:
+            input.form-control#product(list="products" name="rep_item_id" )
+            datalist#products(name="products")
+                each val in products
+                    option(value=val["_id"] name="rep_item_id") #{val["name"]} #{val["price"]} #{val["stock"]}
         .mb-3.mt-3
             input#acc_date.form-control(placeholder='Enter accepted date' name='acc_date' required='')
         .mb-3.mt-3
